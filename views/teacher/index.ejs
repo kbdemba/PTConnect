@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+<% include ../partials/flash %>
+  <div class="container">
+    <h2 class="text-center">Welcome to Classroom: <%= teacher.className %></h2>
+    <h3>classTeacher: <%=teacher.name%></h3>
+    <h3 class="text-center">Students in <span class="font-weight-bold">Grade 1</span></h3>
+  </div>
+  <div class="container">
+    <div class="list-group">
+      <% students.forEach((student) => { %>
+        <a href="teacher/<%=student._id%>/show" class="list-group-item list-group-item-action"><%=student.studentName %></a>
+      <% }) %>
+      <!-- sample for editing -->
+       <a href="#" class="list-group-item list-group-item-action">Sample One</a>
+       <!-- sample for editing -->
+    </div>
+  </div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,143 @@
+VERY VERY VERY IMPORTANT FOR DESIGN
+https://mdbootstrap.com/education/bootstrap/corporate-website-lesson-1/
+TO EDIT
+https://mdbootstrap.com/education/bootstrap/gulp-installation/
+
+GPA COUNTER
+
+smoothScroll
+
+html {
+  scroll-behavior: smooth;
+}
+
+https://www.udemy.com/the-complete-web-developer-course-2/
+
+KADDY KITCHEN AS THE ONE WE HAD IN THE YOUTUBE THAT THOUGHT YOU SCROLL 
+
+Todat
+DESIGN THE Message
+dESIGN THE UPPER PART TO SHOW THE CLASS NAME AND teachers
+save
+THEN CHANGE THE INPUTS IN THE DATABASE TO TAKE FIRST AND Last Name - when im doing the messages
+
+make the inputs
+
+Get the icons
+
+Designing bootstrap buttons
+
+if not finished
+make the home page a carousel, to be moving with different backgrounds
+
+todays Goal
+MONDAY
+take care of the middleware Please ------------incomplete
+Make sure all the middlewares are working --------------incomplete
+Teachers then Parents
+populate all the views with the right data
+
+Black Friday-- Buy stuffs for the Micro Greens
+
+
+
+messages:
+In messages, test and see how the author.id works
+https://github.com/vithalreddy/nodeJS-socketIO-chat-app/blob/master/app/models/chat.js
+
+anytime you have a new message, it creates a new conversation and adds it
+to the user/s model, with the conversation id.
+
+goals tomorrow
+
+make a side nav for the messages link
+you should have a parent Partial header and a teacher Partial header
+make a hover effect on the list of students AND render them by LocalStrategy
+
+Tommorow PROGRESS
+if a teacher logs in, s/he will see all the students in her classroom in a list
+each individual will have an anchor link that will take them to their dashboard
+or on the list it self, there will be a radio button to show if they are good or bad this is like a form to change the behavior
+
+Y dont you make the className in Parent and maybe teacher reference the actual classs id rather than
+just a string saying grade1. THINK
+
+// async function finalSeed(){
+//   await seedDB();
+// } look how to solve this problem with the async and wait functions
+
+if its a teacher, then she will be able to turn it to green or red or yellow
+if its a parent, he/she will only see the color
+
+then their will be a message/comment section at the buttom
+
+#my-div {
+    height:100vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
+}
+
+HOW IT WORKS VO
+// you are the headmaster
+// add students and a teacher to a class
+// create a user for both students and a teacher
+========================================================================
+how they communicate 85% COMPLETE
+
+========================================================================
+then do the middleware
+
+========================================================================
+
+VERY NEAR FUTURE BEFORE V2
+add icons on input fields
+THIS APP IS ONLY FOR NURSERY TO Nursery Schools;
+
+make this app send text messages to parents
+
+make Ajax calls when a message is rendered
+let the master be able to see the usernames
+reset password will be done later
+
+
+you should watch how they set up a message model
+https://www.w3schools.com/howto/howto_css_chat.asp
+text design
+all the messages are stored in the parent model, that will have a user ie to know if the role is teacher or
+or parent so when it comes to the design
+your messaging system is wack, that is the same way u saved it in the database or whatever makes scence to you
+
+home route checks to see if a user is logged in, if not then it renders the normal homepage
+else, it takes you to your dashboard
+
+
+Should it be parent or student (in Models)
+if they log in, let that be handle in the index / route, it will check and see if they are logged in,
+then check if its a teacher or parent, then redirects them to their respective places
+Questions to Ask
+1- how much grrade levels do we have in KG OR ELEMENTRY SCHOOL
+
+make user available to all the views
+// let teacher have an id then a Name at the user in model like the comment so it can be easy to track
+
+  VERSION 2         VERSION 2       VERSION 2       VERSION 2 Name it KONEK ptvibe for the one looks like facebook
+what happens if you log in as a teacher when you have the credentials of a parent
+    log them out immidiately
+    and flash them that no teacher found with that userName,
+    Mayb if the want to try to login as a parent
+validate all the inputs
+MASTER CAN SEE ALL THE TEACHERS AND STUDENTS AND CLASSES
+HE CAN ALSO EDIT ALL OF THEM
+
+Server side validation incase they use postman
+After you can DRY in your code
+
+POPULATE ALL THE MESSAGES AND SHOW THE LAST 10 AND HIDE THE REST, IF SHOW MORE IS CLICKED,
+SHOW ANOTHER 10, AND SO ON. IF THERE ARE NO MORE MESSAGES, JUST PUT NO MORE MESSAGES - MAKE A LIBRARY OF THIS
+
+Make the message display better
+
+Thorough FORM VALIDATION in select of Student behavior
+
+Make a radio button to select the students that acted good and there should be something at
+the top to indicate what you are selecting, eg if its good, naughty, or needToTalk
+
+put the select to select the grade level - MAYB IMPOSSIBLE FOR NOW, V2

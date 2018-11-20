@@ -1,0 +1,74 @@
+ <% include ../partials/header %>
+ <% include ../partials/nav %>
+ <% include ../partials/flash %>
+ <div class="text-center">
+      <h2>No class teacher yet</h2>
+
+  </div>
+  <div class="row text-center">
+    <div class="col"><h3>Student Name: </h3><h4><%=parent.studentName%></h4></div>
+    <div class="col"><h3>Parent Name: </h3><h4><%=parent.parentName%></h4></div>
+    <div class="col"><h3>Class Name: </h3><h4><%=parent.className%></h4></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- if parent behavior is good, then bg-succes -->
+     <!-- <div class="col-xs-12 bg-success" id="parentDisplayBehavior"> -->
+      <!-- <div class="col-xs-12 bg-warning" id="parentDisplayBehavior"> -->
+      <% if(parent.behavior === "good") { %>
+        <div class="col-12 bg-succes" id="parentDisplayBehavior"></div>
+      <% } else if(parent.behavior === "naughty") {%>
+        <div class="col-12 bg-warning" id="parentDisplayBehavior"></div>
+      <% } else if(parent.behavior === "needToTalk") {%>
+        <div class="col-12 bg-danger" id="parentDisplayBehavior"></div>
+      <% } %>
+    </div>
+  </div>
+
+<h1 class="text-center my-4">Messages</h1>
+<div class="container">
+  <% if(parent.messages.length < 1) { %>
+      <h3 class="text-center m-2">No Messages to Display</h3>
+    <% } %>
+  <!-- display the messages -->
+  <!-- loop this div -->
+  <% parent.messages.forEach((message) => { %>
+      <div class="row">
+        <!-- meaning is the teacher -->
+        <% if(message.author === "parent") { %>
+          <!-- if the autor is parent put it here -->
+          <div class="col-md-7 bg-light rounded mb-2 mr-2">
+            <p> <%=message.message%> </p>
+          </div>
+          <!-- if the author is teacher, put it here -->
+          <div class="col-md-5">
+          </div>
+          <!-- meaning the author is the teacher -->
+        <% } else { %>
+          <!-- nlln -->
+          <!-- if the autor is teacher put it here -->
+          <div class="col-md-5">
+
+          </div>
+          <!-- if the author is teacher, put it here -->
+          <div class="col-md-7 bg-primary rounded mb-2 ">
+            <p class=""> <%=message.message%> </p>
+          </div>
+        <% }  %>
+      </div>
+  <% }) %>
+  <!-- loop this div -->
+
+</div>
+<!--  this should be sticky at the buttom-->
+<div class="container">
+  <form method="POST" action="/parent/<%=parent._id%>/message">
+    <h2>New Message</h2>
+    <textarea class="border border-success rounded" name="message" rows="5" cols="80"></textarea>
+    <button class="btn-primary form-control" type="submit">send</button>
+  </form>
+</div>
+
+
+
+<% include ../partials/footer %>

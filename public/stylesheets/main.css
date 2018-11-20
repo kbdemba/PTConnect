@@ -1,0 +1,82 @@
+#header{
+  background-image: url("https://images.pexels.com/photos/448877/pexels-photo-448877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
+  /* mmbackground-image: url("https://images.pexels.com/photos/159782/girl-kids-training-school-159782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  nbackground-image: url("https://images.pexels.com/photos/256468/pexels-photo-256468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("https://images.pexels.com/photos/710743/pexels-photo-710743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
+  background-image: url("https://images.pexels.com/photos/159823/kids-girl-pencil-drawing-159823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"); */
+  /* background-image: url(""); */
+  min-height: 650px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#header .background-overlay{
+height: 100%;
+widows: 100%;
+background: rgba(0, 0, 0, 0.5);
+min-height: 650px;
+position: ;
+}
+.header-text{
+  margin-top: 120px;
+  color: white;
+}
+.nav{
+  z-index: 11;
+}
+/* .navbar{
+  borvder-bottom: 3px #008ed6 solid;
+  opacity: .;
+} */
+
+.nav-link:hover{
+  border-bottom: 1px white solid;
+}
+.show{
+  width: 100px;
+  height: 100%;
+  background-color: green;
+
+}
+
+.bkgroundGradient{
+  background-image: linear-gradient(red, yellow, green);
+  background: #ee9ca7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background: #acb6e5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height:100vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
+}
+
+#parentDisplayBehavior{
+  height: 200px;
+  width: 200px;
+  border-color: red;
+}
+#button-addon2{
+  border-radius: 25px 25px  25px 0;
+}
+
+/* .form-control:focus {
+  outline: none;
+  box-shadow:none !important;
+  border:1px solid #422918;
+} */
+/* .btn-primary.focus, .btn-primary:focus {
+-webkit-box-shadow: none!important;
+box-shadow: none!important;
+} */
+
+#messageInput{
+  border-radius: 25px 25px 0 25px;
+  border: 3px solid grey;
+}
+#createMessage{
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
