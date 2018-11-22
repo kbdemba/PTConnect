@@ -11,10 +11,26 @@ const {isParentLoggedIn} = require("../middleware");
 router.get('/', isParentLoggedIn , (req, res, next)=> {
   // MIDDLEWARE
   const userId= req.user._id
-  Parent.findOne({user: userId }, (err, parent)=>{
-     if(err){console.log(err)}else{
-       //render the page and send along the parent
-       res.render('parent/index', {parent:parent});// the ejs will do the rest
+  //db.inventory.find( { "size.uom": "in" } )
+  Parent.findOne({"user.id" : userId,  }, (err, parent)=>{
+     if(err){
+       console.log(err)
+     }else{
+       // find the teachers classroom and get the teachers name
+       //or add the techer to the parents model to know their teachers name VVVV2222
+       Classroom.findOne({class_name: parent.class_name}, function(err, classroom){
+         if(err){
+           //do a better error handling here V2
+           console.log(err)
+         }else{
+
+           const class_teacher = classroom.teacher.name;
+           //req.flash("success", `Welcome ${parent.parent_name.first_name} ${parent.parent_name.last_name}`)
+           //this flash up,  sholud be where the user is authenticated
+           //render the page and send along the parent and the teacher
+           res.render('parent/index', {parent, class_teacher});// the ejs will do the rest
+         }
+       })
      }//else
   });
 });
@@ -24,6 +40,7 @@ router.get('/', isParentLoggedIn , (req, res, next)=> {
 //let this be a POST not Put
 //MAKE SURE THE USER == PARENT
 // version 2 will have a better MESSAGING sYSTEM V2
+
 router.post("/:parentid/message", isParentLoggedIn, function(req,res){
   //you can use id uptop or use the user thats looged in
   const parentId = req.params.parentid
@@ -51,8 +68,8 @@ router.post("/:parentid/message", isParentLoggedIn, function(req,res){
           parent.save();
             //req.flash("success", "successfully updated the Parent");
             //console.log(req.body.message, "message")
-          req.flash("success", ` Message successfully sent to parent`);
-          res.redirect(`/parent`);
+          req.flash("success", ` Your Message successfully sent to parent`);
+          res.redirect(`/parent`); //v2 this might be a message link or v3 like a socket io
         }
     });
 });

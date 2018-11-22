@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row text-center">
           <div class="col-md-6">
-            <h3 class="display-5 lead">Class Name: <span class="classInfo"><%= teacher.className %></span></h3>
+            <h3 class="display-5 lead">Class Name: <span class="classInfo"><%= teacher.class_name %></span></h3>
             <div class=" bg-dark mx-auto w-50 mt-0 mb-4">
               <hr class="w-50 mt-0 ">
             </div>
@@ -41,8 +41,8 @@
             <% students.forEach((student,index) => { %>
               <tr>
                   <th scope="row"><%= index + 1%></th>
-                  <td><a href="teacher/<%=student._id%>/show" class="studentNameOnAnchor"><%=student.studentName %></a></td>
-                  <td><%=student.parentName %></td>
+                  <td><a href="teacher/<%=student._id%>/show" class="studentNameOnAnchor"><%=student.student_name.first_name %></a></td>
+                  <td><%=student.student_name.last_name %></td>
                   <td><%=student.behavior %> </td>
               </tr>
             <% }) %>

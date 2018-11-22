@@ -2,14 +2,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ClassroomSchema = new Schema({
-    className: String,
+    class_name: String,
     students: [{
               type: Schema.Types.ObjectId,
-              ref: "Parent" // this should be parents or students
-          }],
+              ref: "Parent"}],
     teacher:{
-              type: Schema.Types.ObjectId,
-              ref: "Teacher" // this should be parents or students
-          }
+            id:{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "User"
+            },
+            name: {first_name: String,
+                   last_name: String} // THIS one could have been just embeded in here
+    }
 });
 module.exports = mongoose.model("Classroom", ClassroomSchema);

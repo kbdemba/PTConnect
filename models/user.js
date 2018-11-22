@@ -4,18 +4,10 @@ var mongoose = require("mongoose"),
 var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
-    // role: {
-    //   type: String,
-    //   enum: ['Member', 'Client', 'Owner', 'Admin'],
-    //   default: 'Member'
-    // }
-    role: String
-    // firstName: String,
-    // lastName: String,
-    // avatar: String,
-    //biography: String,
-    //code: String,
-    //isTeacher: {type:Boolean, default: false}
+    role: {
+      type: String,
+      enum: ['teacher', 'parent', 'admin']
+    }
 });
 
 UserSchema.plugin(passportLocalMongoose);

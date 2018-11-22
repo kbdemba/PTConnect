@@ -16,14 +16,17 @@
         <h1 style="text-align: center">Edit Parent</h1>
         <div style="width: 30%; margin: 25px auto;">
           <form method="POST" action="/master/<%=parent._id%>/parent?_method=PUT">
-              <input value="<%=parent.parentName %>" class="form-control mb-3" type="text" name="parentName" placeholder="Parent Name">
-              <input value="<%=parent.studentName %>" class="form-control mb-3" type="text" name="studentName" placeholder="Student Name">
-              <!-- <input class="form-control" type="text" name="className" placeholder="class"> -->
-              <input value="<%=parent.email %>" class="form-control mb-3" type="email" name="email" placeholder="Email">
+
+            <input required value="<%=parent.parent_first_namee %>" class="form-control mb-3" type="text" name="parent_first_name" placeholder="Parent First Name">
+            <input required value="<%=parent.parent_last_namee %>" class="form-control mb-3" type="text" name="parent_last_name" placeholder="Parent Last Name">
+            <input required value="<%=parent.student_first_namee %>" class="form-control mb-3" type="text" name="student_first_name" placeholder="Student First Name">
+            <input required value="<%=parent.student_last_namee %>" class="form-control mb-3" type="text" name="student_last_name" placeholder="Student Last Name">
+            <input required value="<%=parent.email %>" class="form-control mb-3" type="email" name="email" placeholder="Email">
+
               <!-- <input value="<%=parent.secretCode %>" class="form-control" type="text" name="secretCode" placeholder="secretCode"> -->
               <!--make them understand that the grade will return to 1  -->
               <label for="classGrade">Country</label>
-              <select id="classGrade" name="className" class="form-control mb-3">
+              <select id="classGrade" name="class_name" class="form-control mb-3">
                 <option value="grade1">grade1</option>
                 <option value="grade2">grade2</option>
                 <option value="grade3">grade3</option>

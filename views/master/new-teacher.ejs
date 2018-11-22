@@ -10,19 +10,16 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Edit Teacher</h1>
 <div class="container">
-    <div class="row">
-        <h1 style="text-align: center">Edit Teacher</h1>
+    <div class="">
+        <h1 class="text-center">Create a new Teacher</h1>
         <div style="width: 30%; margin: 25px auto;">
-          <form method="POST" action="/master/<%=teacher._id%>/teacher?_method=PUT">
-              <input value="<%=teacher.name %>" class="form-control mb-3" type="text" name="name" placeholder="Name">
-              <!-- <input class="form-control" type="text" name="className" placeholder="class"> -->
-              <input value="<%=teacher.email %>" class="form-control mb-3" type="email" name="email" placeholder="email">
-              <!-- <input value="<%=teacher.ssn %>" class="form-control" type="text" name="ssn" placeholder="last 4 digit of SS"> -->
-              <!--make them understand that the grade will return to 1  -->
+          <form method="POST" action="/master/new-teacher">
+              <input required class="form-control mb-3" type="text" name="name_first_name" placeholder=" First Name">
+              <input required class="form-control mb-3" type="text" name="name_last_name" placeholder=" Last Name">
+              <input required class="form-control mb-3" type="email" name="email" placeholder="Email">
               <label for="classGrade">Classroom</label>
-              <select class="form-control mb-3" id="classGrade" name="className" value="<%=teacher.className %>">
+              <select id="classGrade" name="class_name" class="form-control mb-3">
                 <option value="grade1">grade1</option>
                 <option value="grade2">grade2</option>
                 <option value="grade3">grade3</option>
@@ -32,7 +29,7 @@
               </select>
               <!-- put a select for the class -->
               <div class="form-group">
-                  <button class="btn btn-lg btn-primary btn-block">Update</button>
+                  <button class="btn btn-lg btn-primary btn-block">Create Account</button>
               </div>
           </form>
             <a href="/master">Go Back</a>

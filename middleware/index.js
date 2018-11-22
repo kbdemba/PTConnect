@@ -12,6 +12,19 @@ const middlewares = {
       //res.redirect("/teacher/login")
     }
   },
+  isMasterLoggedIn: function(req,res,next){
+    if(req.isAuthenticated()){
+      if(req.user.role === "master"){
+        return next()
+      }else{
+        req.flash("error", `you do not have permission to do that, you need to be signed in as a master`)
+        res.redirect(`/${req.user.role}`)
+      }
+    }else{
+      res.send("Needs to be logged in")
+      res.redirect("/master/login")
+    }
+  },
   isTeacherLoggedIn: function(req,res,next){
     if(req.isAuthenticated()){
       if(req.user.role === "teacher"){

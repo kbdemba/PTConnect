@@ -9,18 +9,18 @@ const {isTeacherLoggedIn, isClassTeacher} = require("../middleware");
 
 
 //teacher dashboard show all the students for now v1
-//router.get('/', isTeacherLoggedIn, (req, res, next)=> {
 router.get('/', isTeacherLoggedIn, (req, res, next)=> {
-  // if no teacher is logged in, send them back
-  // if the one logged in is a parent, send them to parent homepage -MIDDLEWARE
+  //isTeacherLoggedIn sends you to login page if you are not logged in
   const userId= req.user._id
   //find the classroom that the teacher is in
   //get all the students from that classroom and render them all
-  Teacher.findOne({user: userId }, (err, teacher)=>{
-     if(err){console.log(err)}else{
+  Teacher.findOne({"user.id": userId }, (err, teacher)=>{
+     if(err){
+       console.log(err)
+     }else{
        //the teacher can have a property that will lead to the classroom that she teaches V3
-       const className = teacher.className;
-       Classroom.findOne({className}).populate("students").exec((err,classroom)=>{
+       const class_name = teacher.class_name;
+       Classroom.findOne({class_name}).populate("students").exec((err,classroom)=>{
          if(err){console.log(err)}else{
             const students = classroom.students
            console.log(classroom.students, "students")
@@ -84,7 +84,7 @@ router.post('/:parentId/message', isTeacherLoggedIn, (req, res, next)=> {
       parent.messages.push(message);
       parent.save();
       //or redurect to teacher/parentid/show
-      req.flash("success", ` Message successfully sent to: ${parent.parentName}`);
+      req.flash("success", ` Message successfully sent to ${parent.parent_name.first_name} ${parent.parent_name.last_name}`);
       res.redirect(`/teacher/${req.params.parentId}/show`)
     }//else
   })

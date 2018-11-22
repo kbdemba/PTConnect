@@ -12,10 +12,25 @@
 </head>
 <body>
   <div class="container">
+    <div id="" class="">
+          <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <%=success%>
+            </div>
+          <% } %>
+          <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <%=error%>
+            </div>
+          <% } %>
+
+        </div>
     <div class="">
         <h1 class="text-center mb-5">Admin</h1>
-        <div><a class="my-4 btn btn-primary btn-lg btn-block" href="/master/newTeacher">Create a new Teacher</a></div>
-        <div><a class="mb-4 btn btn-secondary btn-lg btn-block" href="/master/newParent">Create a new Parent</a></div>
+        <div><a class="my-4 btn btn-primary btn-lg btn-block" href="/master/new-teacher">Create a new Teacher</a></div>
+        <div><a class="mb-4 btn btn-secondary btn-lg btn-block" href="/master/new-parent">Create a new Parent</a></div>
     </div>
   </div>
 </body>

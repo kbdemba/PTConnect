@@ -1,11 +1,21 @@
+APP for coaches and parents for little Kids in Jackson, so parents CAN
+know how their Kids are doing
+
+I should have a male or female in the models parent & teacher so that when showing the messages
+i can show the lady or the guy and also to use mrs or miss. 
+commit message - modify index and master routes, add some views to master and modify the database
+
 Now
 DESIGN THE DATABASE AFTER YOU MAKE THE INPUTS LOOK NORMAL
 change the name in the text area at the new create message that sticks at the button
 HOME PAGE DESIGN OF DARK BG
 THEN TEACHER, PARENT, SHOW STUDENT
 
+https://www.groupon.com/cart
 
 LOGIN FORMS
+
+all the emails and username should be unique
 
 change the input ype to texarea in creating messages
 THE 404 for the public images, just use  ../../images/2.jpg
@@ -56,7 +66,7 @@ populate all the views with the right data
 
 Black Friday-- Buy stuffs for the Micro Greens
 
-
+teacher-profile. they can see all their stuffs
 
 messages:
 In messages, test and see how the author.id works
@@ -151,6 +161,8 @@ POPULATE ALL THE MESSAGES AND SHOW THE LAST 10 AND HIDE THE REST, IF SHOW MORE I
 SHOW ANOTHER 10, AND SO ON. IF THERE ARE NO MORE MESSAGES, JUST PUT NO MORE MESSAGES - MAKE A LIBRARY OF THIS
 
 Make the message display better
+
+Version3 - Allow google LOGIN
 
 Thorough FORM VALIDATION in select of Student behavior
 
