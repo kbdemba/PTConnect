@@ -1,0 +1,146 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+<% include ../partials/flash %>
+
+  <header id="" class="mt-3 mb-5">
+    <div class="container">
+        <div class="">
+          <h3 class="display-5 lead">Student Name: <span class="classInfo"><%=student.studentName%></span></h3>
+          <h3 class="display-5 lead">Parent Name: <span class="classInfo"><%=student.parentName%></span></h3>
+          <h3 class="display-5 lead">Student Name: <span class="classInfo"><%=student.className%></span></h3>
+        </div>
+        <hr class="">
+      </div>
+  </header>
+
+  <section id="" class="mt-3">
+    <div class="container">
+        <!-- good behavior -->
+        <% if(student.behavior === "good") { %>
+          <p class="lead d-inline pr-2">Current Behavior :</p>
+          <div class="bg-success d-inline px-2 text-white">Good</div>
+        <% }else if(student.behavior === "naughty") {%>
+          <p class="lead d-inline pr-2">Current Behavior :</p>
+          <div class="bg-warning d-inline px-2 text-white">Naughty</div>
+        <% }else if(student.behavior === "needToTalk") { %>
+          <p class="lead d-inline pr-2">Current Behavior :</p>
+          <div class="bg-danger d-inline px-2 text-white">Need to talk</div>
+        <% } %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <form class="mt-3" method="POST" action="/teacher/<%=student._id%>/?_method=PUT">
+                  <div class="input-group">
+                    <select name="behavior" class="custom-select" id="inputGroupSelect04">
+                      <option selected disabled hidden>Choose Behavior</option>
+                      <option value="good">Good</option>
+                      <option value="naughty">naughty</option>
+                      <option value="needToTalk">Need to Talk</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="submit">Update</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="messages" id="teacher-Messages">
+      <div class="container mt-5">
+        <p class="display-4 text-center mb-0">Messages</p>
+        <hr class="mt-0 w-50">
+          <div class="app--section">
+            <ul class="app--message--list">
+              <li>
+                <h3 class="text-center mb-3">Conversation with <%=student.studentName%>'s Parents</h3>
+                <ul class="app--message--conversation">
+                  <!-- loop this div  and this student can be parent or student-->
+                  <% if(student.messages.length < 1) { %>
+                      <h3 class="text-center m-2">No Messages to Display</h3>
+                  <% } %>
+                  <% student.messages.forEach((message) => { %>
+                      <% if(message.author === "teacher") { %>
+                        <li class="app--message--me">
+                          <div class="app--avatar" style="background-image: url(../../images/m-spore.png)">
+                            <img src="../../images/m-spore.png" />
+                          </div>
+                          <p class="app--message--text"> <%=message.message%> </p>
+                          <p class="app--message--timestamp">2 hours ago</p>
+                        </li>
+                      <% } else if(message.author === "parent"){ %>
+                        <li class="app--message">
+                          <div class="app--avatar" style="background-image: url(../../images/f-spore.png)">
+                            <img src="../../images/f-spore.png" />
+                          </div>
+                          <p class="app--message--text"> <%=message.message%> </p>
+                          <p class="app--message--timestamp">3 hours ago</p>
+                        </li>
+                      <% } %>
+                  <% }) %>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </section>
+
+    <div class="container mt-5">
+      <hr>
+    </div>
+
+
+
+  <!-- Messages WHAT IF A STUDENT HAVE DIFFERENT TEACHER-->
+  <h1 class="text-center my-4">Messages</h1>
+  <div class="container">
+    <!-- loop this div  and this student can be parent or student-->
+    <% if(student.messages.length < 1) { %>
+        <h3 class="text-center m-2">No Messages to Display</h3>
+      <% } %>
+    <% student.messages.forEach((message) => { %>
+        <div class="row">
+          <!-- meaning is the teacher -->
+          <% if(message.author === "teacher") { %>
+            <!-- if the autor is teacher put it here -->
+            <div class="col-md-7 mb-2">
+              <p class="bg-light d-inline pr-3 rounde"> <%=message.message%> </p>
+            </div>
+            <!-- if the author is parent, put it here -->
+            <div class="col-md-5">
+            </div>
+            <!-- meaning the author is the parent -->
+          <% } else { %>
+            <!-- nlln -->
+            <!-- if the autor is teacher put it here -->
+            <div class="col-md-5">
+
+            </div>
+            <!-- if the author is parent, put it here -->
+            <div class="col-md-7 mb-4 ">
+              <p class="bg-primary d-inline rounded py-2 pl-1 pr-2"> <%=message.message%> </p>
+            </div>
+          <% }  %>
+        </div>
+    <% }) %>
+    <!-- loop this div -->
+
+  </div>
+
+  <!-- this should be sticky somewhere -->
+  <!-- Send a message -->
+  <div class="container  create-sticky-message">
+    <form class=" py-3" method="POST" action="/teacher/<%=student._id%>/message">
+      <div class="form-row">
+        <div class="col-md-10">
+          <input type="text" name="message" class="form-control p-4" placeholder="Send a quick Message">
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn h-100 btn-primary form-control" placeholder="State">SEND</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+<% include ../partials/footer %>

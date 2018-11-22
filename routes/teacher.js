@@ -23,7 +23,7 @@ router.get('/', isTeacherLoggedIn, (req, res, next)=> {
        Classroom.findOne({className}).populate("students").exec((err,classroom)=>{
          if(err){console.log(err)}else{
             const students = classroom.students
-          //  console.log(classroom.students, "students")
+           console.log(classroom.students, "students")
             res.render('teacher/index', {students, teacher});// the ejs will do the rest
          }//second else
        })
@@ -44,7 +44,9 @@ router.get('/:parentId/show', isTeacherLoggedIn, (req, res, next)=> {
       // the teacher can now edit the good Or Bad behavior here
       //console.log(typeof(req.user._id))
       //const teacherName= req.user.username
-      res.render("teacher/showStudent", {student:parent})
+      //res.render("teacher/showStudent", {student:parent})
+      res.render("teacher/student-show", {student:parent})
+
     }//else
   })
 });

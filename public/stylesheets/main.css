@@ -1,64 +1,111 @@
-#header{
-  background-image: url("https://images.pexels.com/photos/448877/pexels-photo-448877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
-  /* mmbackground-image: url("https://images.pexels.com/photos/159782/girl-kids-training-school-159782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  nbackground-image: url("https://images.pexels.com/photos/256468/pexels-photo-256468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-image: url("https://images.pexels.com/photos/710743/pexels-photo-710743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
-  background-image: url("https://images.pexels.com/photos/159823/kids-girl-pencil-drawing-159823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"); */
-  /* background-image: url(""); */
-  min-height: 650px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-#header .background-overlay{
-height: 100%;
-widows: 100%;
-background: rgba(0, 0, 0, 0.5);
-min-height: 650px;
-position: ;
-}
+/* i will need this to move the height a lil bit
 .header-text{
   margin-top: 120px;
   color: white;
-}
-.nav{
-  z-index: 11;
-}
-/* .navbar{
-  borvder-bottom: 3px #008ed6 solid;
-  opacity: .;
 } */
-
-.nav-link:hover{
-  border-bottom: 1px white solid;
+                  /* General Customizations*/
+ul{
+  padding-left: 0;
+  /* padding-inline-start: 40px; */
 }
-.show{
-  width: 100px;
-  height: 100%;
-  background-color: green;
-
+.bg-dark{
+  background-color: #a86cc6 !important;
+  color: white;
+  /* background-color: #f44292 !important; */
+  /* background-color: #c689a4 !important; */
+  /* background-color: #a86cc6 !important; */
 }
+button.bg-dark:hover {
+  background-color: #7822a3 !important;
+}
+                      /* body */
+/* for ths scrollspy */
+body {
+  position: relative;
 
-.bkgroundGradient{
-  background-image: linear-gradient(red, yellow, green);
-  background: #ee9ca7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-background: #acb6e5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  height:100vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
 }
 
+/* ---------------- Navs ----------------*/
+.navbar .nav-link{
+  margin-left: 15px;
+}
+
+.navbar .nav-link:hover{
+  color: #fff;
+  border-bottom: 1px solid white;
+}
+.navbar .active{
+  color: #fff;
+  border-bottom: 1px solid white;
+}
+
+/* ---------------- Header ---------------*/
+#flash-notification{
+  position: fixed;
+  top: 55px;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+}
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-caption{
+  padding-bottom: 12%;
+  color: white;
+}
+.carousel-item:after {
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,0.2);
+}
+
+
+/* Main in homepage */
+.font-checks{
+  color: #fff;
+  /* font-size: 2em; */
+  background-color: #c689a4;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+/* ----------------PARENTS -----------------------*/
 #parentDisplayBehavior{
   height: 200px;
   width: 200px;
-  border-color: red;
+  border-radius: 15px;
 }
 #button-addon2{
   border-radius: 25px 25px  25px 0;
+}
+
+#messageInput{
+  border-radius: 25px 25px 0 25px;
+  border: 3px solid grey;
+}
+
+/* ----------------Teacher -----------------------*/
+#teacher-header, #parent-header{
+  padding-top: 70px;
+}
+#studentsTable a{
+  color: white;
+}
+/* ----------------PARENTS & TEACHER -----------------------*/
+.classInfo{
+  color: #c689a4;
 }
 
 /* .form-control:focus {
@@ -70,13 +117,151 @@ background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, F
 -webkit-box-shadow: none!important;
 box-shadow: none!important;
 } */
-
-#messageInput{
-  border-radius: 25px 25px 0 25px;
-  border: 3px solid grey;
-}
-#createMessage{
+/* ----------------MESSAGES -----------------------*/
+.create-sticky-message{
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
+  border-radius: 8px;
+  background: #f3edf7;
+}
+.create-sticky-message input[type="text"]{
+  border-radius: 20px;
+}
+
+/* CSS MESSAGES */
+.app--message--me {
+    padding: 0 0 10px;
+    padding-right: 70px;
+    text-align: right;
+    position: relative;
+}
+
+.app--message--list, .app--message--conversation {
+    list-style: none;
+}
+.app--message {
+    padding: 0 0 10px;
+    padding-left: 70px;
+    position: relative;
+    margin-right: 20%;
+
+
+}
+.app--message--me .app--avatar {
+    right: 0;
+  }
+
+.app--message--list .app--avatar, .app--message--conversation .app--avatar {
+      position: absolute;
+      bottom: 10px;
+      margin: 0;
+  }
+
+.app--avatar {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 54px;
+    height: 54px;
+    float: left;
+    margin-left: -70px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+    -webkit-transition: box-shadow 0.2s;
+    -moz-transition: box-shadow 0.2s;
+    -ms-transition: box-shadow 0.2s;
+    -o-transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+}
+
+.app--message--text {
+    background: #c3b7cc;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 0 0 5px;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+}
+.app--message--me .app--message--text {
+    background: #1da1f2;
+    background: #1da1f2;
+    margin-left: 20%; /* do this at media query */
+}
+
+.app--message--text:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -8px;
+    bottom: 0px;
+    background: #c3b7cc url(../images/message-tail.svg) no-repeat;
+    width: 16px;
+    height: 20px;
+}
+.app--message--me .app--message--text:after {
+    background: #1da1f2 url(../images/message-tail-me.svg) no-repeat;
+    background: #1da1f2 url(../images/message-tail-me.svg) no-repeat;
+    left: auto;
+    right: -8px;
+}
+
+.app--message--conversation {
+    margin: 0;
+}
+
+.app--message--list .app--avatar, .app--message--conversation .app--avatar {
+    position: absolute;
+    bottom: 10px;
+    margin: 0;
+}
+.app--message .app--avatar {
+    left: 0;
+}
+
+.app--avatar img {
+    width: 100%;
+    display: none;
+}
+
+.app--message--timestamp {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0;
+}
+/* this is mine, i removed the one inside */
+/* .app--avatar{
+  background-image: url("../images/f-spore.png");
+} */
+/* Floating New Message button */
+.btt {
+
+    text-align: center;
+    background: #c689a4;
+    width: 65px;
+    position: fixed;
+    right: 50px;
+    bottom: 70px;
+    z-index: 9998;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 5px 10px 25px #555;
+}
+
+.btt:hover {
+    background: #000;
+    /* color: #c689a4; */
+    box-shadow: 5px 10px 25px #555;
+}
+
+.btt i {
+    color: #ffffff7a;
+    font-size: 45px;
+    padding: 7px;
+}
+
+.btt i:hover {
+    color:#fff;
 }

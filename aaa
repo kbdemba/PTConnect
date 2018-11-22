@@ -1,9 +1,26 @@
+Now
+DESIGN THE DATABASE AFTER YOU MAKE THE INPUTS LOOK NORMAL
+change the name in the text area at the new create message that sticks at the button
+HOME PAGE DESIGN OF DARK BG
+THEN TEACHER, PARENT, SHOW STUDENT
+
+
+LOGIN FORMS
+
+change the input ype to texarea in creating messages
+THE 404 for the public images, just use  ../../images/2.jpg
+<img src="../../images/2.jpg" >
+
 VERY VERY VERY IMPORTANT FOR DESIGN
 https://mdbootstrap.com/education/bootstrap/corporate-website-lesson-1/
 TO EDIT
 https://mdbootstrap.com/education/bootstrap/gulp-installation/
 
 GPA COUNTER
+
+Built a solution for email templates
+
+DO AUTOMATION USING GULP FOR THIS APP
 
 smoothScroll
 
@@ -13,7 +30,7 @@ html {
 
 https://www.udemy.com/the-complete-web-developer-course-2/
 
-KADDY KITCHEN AS THE ONE WE HAD IN THE YOUTUBE THAT THOUGHT YOU SCROLL 
+KADDY KITCHEN AS THE ONE WE HAD IN THE YOUTUBE THAT THOUGHT YOU SCROLL
 
 Todat
 DESIGN THE Message

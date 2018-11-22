@@ -39,7 +39,7 @@ router.post('/newParent', (req, res, next)=> {
     className: req.body.className
   }
 
-  const password = req.body.studentName + req.body.parentName;
+  const password = req.body.parentName;
   //username will be email IN V2
   const newUser = new User({
     username: req.body.parentName,
@@ -98,7 +98,7 @@ router.post('/newTeacher', (req, res, next)=> {
   }
 
   // then create a User for the Parent
-  const password = req.body.name + "1";
+  const password = req.body.name ;
   const newUser = new User({
     username: req.body.name, //this might change to email V2
     role: "teacher"
@@ -253,7 +253,7 @@ function createTheInitialClassrooms(){
   Classroom.create({className: "grade6"})
   console.log("classrooms created 1111111111111111111111111111")
 }
-// createTheInitialClassrooms()
+//createTheInitialClassrooms()
 //------------------END----------------------------------------
 
 function createAParent(pw, userName, parentToBeCreated){

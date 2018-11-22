@@ -1,0 +1,184 @@
+#header{
+  background-image: url("https://images.pexels.com/photos/448877/pexels-photo-448877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
+  /* mmbackground-image: url("https://images.pexels.com/photos/159782/girl-kids-training-school-159782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  nbackground-image: url("https://images.pexels.com/photos/256468/pexels-photo-256468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("https://images.pexels.com/photos/710743/pexels-photo-710743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
+  background-image: url("https://images.pexels.com/photos/159823/kids-girl-pencil-drawing-159823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"); */
+  /* background-image: url(""); */
+  min-height: 650px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#header .background-overlay{
+height: 100%;
+widows: 100%;
+background: rgba(0, 0, 0, 0.5);
+min-height: 650px;
+position: ;
+}
+.header-text{
+  margin-top: 120px;
+  color: white;
+}
+.nav{
+  z-index: 11;
+}
+/* .navbar{
+  borvder-bottom: 3px #008ed6 solid;
+  opacity: .;
+} */
+
+.nav-link:hover{
+  border-bottom: 1px white solid;
+}
+.show{
+  width: 100px;
+  height: 100%;
+  background-color: green;
+
+}
+
+.bkgroundGradient{
+  background-image: linear-gradient(red, yellow, green);
+  background: #ee9ca7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background: #acb6e5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height:100vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
+}
+
+#parentDisplayBehavior{
+  height: 200px;
+  width: 200px;
+  border-color: red;
+}
+#button-addon2{
+  border-radius: 25px 25px  25px 0;
+}
+
+/* .form-control:focus {
+  outline: none;
+  box-shadow:none !important;
+  border:1px solid #422918;
+} */
+/* .btn-primary.focus, .btn-primary:focus {
+-webkit-box-shadow: none!important;
+box-shadow: none!important;
+} */
+
+#messageInput{
+  border-radius: 25px 25px 0 25px;
+  border: 3px solid grey;
+}
+.create-sticky-message{
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  border-radius: 8px;
+}
+
+/* CSS MESSAGES */
+.app--message--me {
+    padding: 0 0 10px;
+    padding-right: 70px;
+    text-align: right;
+    position: relative;
+}
+
+.app--message--list, .app--message--conversation {
+    list-style: none;
+}
+.app--message {
+    padding: 0 0 10px;
+    padding-left: 70px;
+    position: relative;
+
+}
+.app--message--me .app--avatar {
+    right: 0;
+  }
+
+.app--message--list .app--avatar, .app--message--conversation .app--avatar {
+      position: absolute;
+      bottom: 10px;
+      margin: 0;
+  }
+
+.app--avatar {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 54px;
+    height: 54px;
+    float: left;
+    margin-left: -70px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+    -webkit-transition: box-shadow 0.2s;
+    -moz-transition: box-shadow 0.2s;
+    -ms-transition: box-shadow 0.2s;
+    -o-transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+}
+
+.app--message--text {
+    background: #a86cc6;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 0 0 5px;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+}
+.app--message--me .app--message--text {
+    background: #1da1f2;
+    background: #f00;
+    margin-left: 20%;: /* do this at media query */
+}
+
+.app--message--text:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -8px;
+    bottom: 0px;
+    background: #a86cc6 url(../images/message-tail.svg) no-repeat;
+    width: 16px;
+    height: 20px;
+}
+.app--message--me .app--message--text:after {
+    background: #1da1f2 url(../images/message-tail-me.svg) no-repeat;
+    background: #f00 url(../images/message-tail-me.svg) no-repeat;
+    left: auto;
+    right: -8px;
+}
+
+.app--message--conversation {
+    margin: 0;
+}
+
+.app--message--list .app--avatar, .app--message--conversation .app--avatar {
+    position: absolute;
+    bottom: 10px;
+    margin: 0;
+}
+.app--message .app--avatar {
+    left: 0;
+}
+
+.app--avatar img {
+    width: 100%;
+    display: none;
+}
+
+.app--message--timestamp {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0;
+}

@@ -1,22 +1,27 @@
  <% include ../partials/header %>
  <% include ../partials/nav %>
  <% include ../partials/flash %>
- <div class="text-center">
-      <h2>No class teacher yet</h2>
 
-  </div>
-  <div class="row text-center">
-    <div class="col"><h3>Student Name: </h3><h4><%=parent.studentName%></h4></div>
-    <div class="col"><h3>Parent Name: </h3><h4><%=parent.parentName%></h4></div>
-    <div class="col"><h3>Class Name: </h3><h4><%=parent.className%></h4></div>
-  </div>
+<!-- Side note -->
+<!-- parent is referred to student in the teachers inder -->
+<!-- Parent means the student -->
+  <section id="teacher-header" class="mt-1 mb-5">
+    <div class="container text-center">
+      <h2 class="display-5 ">Welcome <span class=""><%=parent.parentName%></span></h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="display-5 lead">Class Name: <span class="classInfo"><%=parent.className%></span></h3>
+        </div>
+        <div class="col-md-6">
+          <h3 class="display-5 lead">Teacher Name: <span class="classInfo">No Teacher Yet</span></h3>
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="container">
     <div class="row">
-      <!-- if parent behavior is good, then bg-succes -->
-     <!-- <div class="col-xs-12 bg-success" id="parentDisplayBehavior"> -->
-      <!-- <div class="col-xs-12 bg-warning" id="parentDisplayBehavior"> -->
       <% if(parent.behavior === "good") { %>
-        <div class="col-12 bg-succes" id="parentDisplayBehavior"></div>
+        <div class="col-12 bg-success" id="parentDisplayBehavior"></div>
       <% } else if(parent.behavior === "naughty") {%>
         <div class="col-12 bg-warning" id="parentDisplayBehavior"></div>
       <% } else if(parent.behavior === "needToTalk") {%>
@@ -25,47 +30,102 @@
     </div>
   </div>
 
-<h1 class="text-center my-4">Messages</h1>
-<div class="container">
+
+  <section class="messages" id="parent-Messages">
+      <div class="container mt-5">
+        <p class="display-4 text-center mb-0">Messages</p>
+        <hr class="mt-0 w-50">
+          <div class="app--section">
+            <ul class="app--message--list">
+              <li>
+                <h3 class="text-center mb-3">Conversation with Teacher Name</h3>
+                <ul class="app--message--conversation">
+                  <!-- loop this div  and this student can be parent or student-->
+                  <% if(parent.messages.length < 1) { %>
+                      <h3 class="text-center m-2">No Messages to Display</h3>
+                  <% } %>
+                  <% parent.messages.forEach((message) => { %>
+                      <% if(message.author === "parent") { %>
+                        <li class="app--message--me">
+                          <div class="app--avatar" style="background-image: url(images/m-spore.png)">
+                            <img src="images/m-spore.png" />
+                          </div>
+                          <p class="app--message--text"> <%=message.message%> </p>
+                          <p class="app--message--timestamp">2 hours ago</p>
+                        </li>
+                      <% } else if(message.author === "teacher"){ %>
+                        <li class="app--message">
+                          <div class="app--avatar" style="background-image: url(images/f-spore.png)">
+                            <img src="images/f-spore.png" />
+                          </div>
+                          <p class="app--message--text"><%=message.message%></p>
+                          <p class="app--message--timestamp">3 hours ago</p>
+                        </li>
+                      <% } %>
+                  <% }) %>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+  </section>
+
+
+
+  <hr>
+
+  <h1 class="text-center my-4">Messages</h1>
+  <div class="container">
   <% if(parent.messages.length < 1) { %>
       <h3 class="text-center m-2">No Messages to Display</h3>
-    <% } %>
-  <!-- display the messages -->
-  <!-- loop this div -->
-  <% parent.messages.forEach((message) => { %>
-      <div class="row">
-        <!-- meaning is the teacher -->
-        <% if(message.author === "parent") { %>
-          <!-- if the autor is parent put it here -->
-          <div class="col-md-7 bg-light rounded mb-2 mr-2">
-            <p> <%=message.message%> </p>
-          </div>
-          <!-- if the author is teacher, put it here -->
-          <div class="col-md-5">
-          </div>
-          <!-- meaning the author is the teacher -->
-        <% } else { %>
-          <!-- nlln -->
-          <!-- if the autor is teacher put it here -->
-          <div class="col-md-5">
+    <% } else { %>
+    <!-- display the messages -->
+    <!-- loop this div -->
+    <% parent.messages.forEach((message) => { %>
+        <div class="row">
+          <!-- meaning is the teacher -->
+          <% if(message.author === "parent") { %>
+            <!-- if the autor is parent put it here -->
+            <div class="col-md-7 bg-light rounded mb-2 mr-2">
+              <p> <%=message.message%> </p>
+            </div>
+            <!-- if the author is teacher, put it here -->
+            <div class="col-md-5">
+            </div>
+            <!-- meaning the author is the teacher -->
+          <% } else { %>
+            <!-- nlln -->
+            <!-- if the autor is teacher put it here -->
+            <div class="col-md-5">
 
-          </div>
-          <!-- if the author is teacher, put it here -->
-          <div class="col-md-7 bg-primary rounded mb-2 ">
-            <p class=""> <%=message.message%> </p>
-          </div>
-        <% }  %>
-      </div>
-  <% }) %>
+            </div>
+            <!-- if the author is teacher, put it here -->
+            <div class="col-md-7 bg-primary rounded mb-2 ">
+              <p class=""> <%=message.message%> </p>
+            </div>
+          <% }  %>
+        </div>
+    <% }) %>
+    <hr>
+    <botton class="mb-3 mx-auto btn btn-sm btn-outline-secondary">Show more</botton>
+
+  <% }  %>
   <!-- loop this div -->
 
 </div>
-<!--  this should be sticky at the buttom-->
-<div class="container">
-  <form method="POST" action="/parent/<%=parent._id%>/message">
-    <h2>New Message</h2>
-    <textarea class="border border-success rounded" name="message" rows="5" cols="80"></textarea>
-    <button class="btn-primary form-control" type="submit">send</button>
+
+<!-- this should be sticky somewhere -->
+<!-- Send a message -->
+<div class="container  create-sticky-message">
+  <form class=" py-3" method="POST" action="/parent/<%=parent._id%>/message">
+    <div class="form-row">
+      <div class="col-md-10">
+        <input type="text" name="message"class="form-control p-4" placeholder="Send a quick Message">
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn h-100 btn-primary form-control" placeholder="State">SEND</button>
+      </div>
+    </div>
   </form>
 </div>
 

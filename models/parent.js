@@ -18,7 +18,8 @@ const ParentSchema = new Schema({
     //dateOfBirth: in the version 2
     email: String,
     className: String,
-    behavior: {type: String, default: "good"},
+    behavior: {type: String,
+              default:"good"},
     messages:[{
       author:String,
       message:String,
