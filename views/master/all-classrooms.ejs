@@ -3,12 +3,12 @@
 <% include ../partials/flash %>
 
   <div class="container mt-5"></div>
-  <h1>All the Teachers are in here</h1>
-  <%=teachers.length%>
-  <!-- table for student Lists -->
+  <h1>All the Classroms are in here</h1>
+  <%=classrooms.length%>
+  <!-- table for all classrooms for master -->
   <section id="all-parents-table" class="">
     <div class="container">
-      <h3>Number of students: <%=teachers.length %></h3>
+      <h3>Number of classrooms: <%=classrooms.length %></h3>
       <h3 class="text-center mt-4 mb-1">All Teachers</h3>
       <div class=" bg-dark mx-auto w-50 mt-0 mb-4">
         <hr class="w-50 mt-0 ">
@@ -17,20 +17,20 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Teacher Name</th>
               <th scope="col">Class Name</th>
-              <th scope="col">Email</th>
+              <th scope="col">Class Teacher</th>
+              <th scope="col">Number of Students</th>
             </tr>
           </thead>
           <tbody>
-            <% teachers.forEach((teacher,index) => { %>
+            <% classrooms.forEach((classroom,index) => { %>
               <tr>
                   <th scope="row"><%= index + 1%></th>
-                  <td><a href="/teacher/<%=teacher._id%>/show" class="name-on-anchor">
-                      <%=teacher.name.first_name %> <%=teacher.name.last_name %></a>
+                  <td><a href="/classroom/<%=classroom._id%>/show" class="name-on-anchor">
+                      <%=classroom.class_name %> </a>
                   </td>
-                  <td><%=teacher.class_name %></td>
-                  <td><%=teacher.email %> </td>
+                  <td><%=classroom.teacher.name.first_name %> <%=classroom.teacher.name.last_name %></td>
+                  <td><%=classroom.students.length %> </td>
               </tr>
             <% }) %>
           </tbody>

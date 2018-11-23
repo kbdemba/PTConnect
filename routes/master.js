@@ -41,14 +41,22 @@ router.get('/all-teacher', (req, res, next)=> {
       console.log(err)
       //do something better
     }else{
-      res.render("master/all-teachers", {parents:found_teachers})
+      res.render("master/all-teachers", {teachers:found_teachers})
     }
   })
 });
 
-//show an individual parent
-router.get('/new-parent', (req, res, next)=> {
-  res.render('master/new-parent');
+//get all classrooms
+router.get('/all-classrooms', (req, res, next)=> {
+  //maybe do a pagination in it
+  Classroom.find({}, (err, classrooms)=>{
+    if(err){
+      console.log(err)
+      //do something better
+    }else{
+      res.render("master/all-classrooms", {classrooms})
+    }
+  })
 });
 
 // show an individual parent

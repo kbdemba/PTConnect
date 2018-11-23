@@ -1,11 +1,10 @@
 <% include ../partials/header %>
 <% include ../partials/nav %>
 <% include ../partials/flash %>
-
-  <section style="height: 70vh;" class="login-form d-flex justify-content-center align-items-center mt-5">
-    <div class="col-md-3 bg-dark border rounded">
+  <section class="login-form row justify-content-md-center mt-5">
+    <div class="col-md-4 bg-dark">
       <form method="POST" action="/parent/login" class="" >
-        <p class="h4 mb-4 pt-3 text-center">Sign in as Parent</p>
+        <p class="h4 mb-4">Sign in as Parent</p>
         <!-- Username -->
         <input type="text" name="username" placeholder="Username" class="form-control mb-4">
         <!-- Password -->

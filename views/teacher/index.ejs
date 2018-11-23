@@ -41,7 +41,9 @@
             <% students.forEach((student,index) => { %>
               <tr>
                   <th scope="row"><%= index + 1%></th>
-                  <td><a href="teacher/<%=student._id%>/show" class="studentNameOnAnchor"><%=student.student_name.first_name %></a></td>
+                  <td><a href="teacher/<%=student._id%>/show" class="name-on-anchor">
+                    <%=student.student_name.first_name %></a>
+                  </td>
                   <td><%=student.student_name.last_name %></td>
                   <td><%=student.behavior %> </td>
               </tr>

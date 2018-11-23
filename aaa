@@ -2,14 +2,13 @@ APP for coaches and parents for little Kids in Jackson, so parents CAN
 know how their Kids are doing
 
 I should have a male or female in the models parent & teacher so that when showing the messages
-i can show the lady or the guy and also to use mrs or miss. 
+i can show the lady or the guy and also to use mrs or miss.
 commit message - modify index and master routes, add some views to master and modify the database
 
 Now
-DESIGN THE DATABASE AFTER YOU MAKE THE INPUTS LOOK NORMAL
-change the name in the text area at the new create message that sticks at the button
-HOME PAGE DESIGN OF DARK BG
-THEN TEACHER, PARENT, SHOW STUDENT
+
+admins can look up classrooms
+if admins can edit a students behavior, then it should tell if he or the teachers updated the behavior
 
 https://www.groupon.com/cart
 
@@ -21,12 +20,17 @@ change the input ype to texarea in creating messages
 THE 404 for the public images, just use  ../../images/2.jpg
 <img src="../../images/2.jpg" >
 
+quering where its an object, use ""
+db.inventory.find( { "size.uom": "in" } )
+
 VERY VERY VERY IMPORTANT FOR DESIGN
 https://mdbootstrap.com/education/bootstrap/corporate-website-lesson-1/
 TO EDIT
 https://mdbootstrap.com/education/bootstrap/gulp-installation/
 
 GPA COUNTER
+app for tutoring appointments. tutors go online, and students see who is online and what time they will be
+available. they can set up appointments, and send text msg to each other.
 
 Built a solution for email templates
 
