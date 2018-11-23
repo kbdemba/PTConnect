@@ -14,6 +14,11 @@ https://www.groupon.com/cart
 
 LOGIN FORMS
 
+
+reset passport
+http://sahatyalkabov.com/how-to-implement-password-reset-in-nodejs/
+
+
 all the emails and username should be unique
 
 change the input ype to texarea in creating messages

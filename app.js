@@ -5,19 +5,22 @@ const createError = require('http-errors'),
       logger = require('morgan'),
       session = require('express-session'),
       bodyParser = require("body-parser"),
-      mongoose = require("mongoose"),  
+      mongoose = require("mongoose"),
       flash = require("connect-flash"),
       //middleware = require("./middleware"), //dont need the /index
       methodOverride = require("method-override"),
       passport = require("passport"),
       LocalStrategy = require("passport-local"),
       passportLocalMongoose = require("passport-local-mongoose"),
+      async = require("async"),
+      nodemailer = require("nodemailer"),
+      crypto = require("crypto"),
       ////Models
       User = require("./models/user");
       //Camp = require("./models/camp"),
       //Comment = require("./models/comment");
-
-
+require('dotenv').config();
+//console.log(process.env.GMAILPW)
 
     // REQUIRING ROUTES
 const indexRouter = require("./routes/index");

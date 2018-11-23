@@ -101,6 +101,11 @@ router.get('/new-teacher', (req, res, next)=> {
   res.render('master/new-teacher');
 });
 
+//get the form to create a new parent
+router.get('/new-parent', (req, res, next)=> {
+  res.render('master/new-parent');
+});
+
 
 //create a new parent
 router.post('/new-parent', (req, res, next)=> {
@@ -122,7 +127,8 @@ router.post('/new-parent', (req, res, next)=> {
   //username will be email IN V2
   //change the way you do it here, below is not realistic
   const new_user = new User({
-    username: req.body.email,
+    username: req.body.email, // i should not username here, i will just tell passport to use email
+    email:req.body.email,
     role: "parent"
   })
 
@@ -184,6 +190,7 @@ router.post('/new-teacher', (req, res, next)=> {
   const password = req.body.name_first_name + req.body.name_first_name ;
   const new_user = new User({
     username: req.body.email, //this might change to email V2
+    email: req.body.email,
     role: "teacher"
   })
   User.register(new_user, password , (err,created_user) => {

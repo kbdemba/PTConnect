@@ -12,7 +12,7 @@ const ClassroomSchema = new Schema({
                 ref: "User"
             },
             name: {first_name: String,
-                   last_name: String} // THIS one could have been just embeded in here
+                   last_name: String} // THIS one could have been just embeded in here, no need for id
     }
 });
 module.exports = mongoose.model("Classroom", ClassroomSchema);
