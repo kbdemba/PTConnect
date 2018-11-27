@@ -66,7 +66,7 @@ a, a:hover{
 box-shadow: 4px 4px 15px 1px rgba(0,0,0,0.65);
 }
 .bg-dark{
-  
+
   background-color: #a86cc6 !important;
   color: white;
   /* background-color: #f44292 !important; */
@@ -129,7 +129,7 @@ body {
   bottom:0;
   left:0;
   right:0;
-  background:rgba(0,0,0,0.2);
+  background:rgba(0,0,0,0.7);
 }
 
 
