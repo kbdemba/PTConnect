@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const passport = require("Passport");
+const passport = require("passport");
 const User = require("../models/user");
 const Parent = require("../models/parent");
 const Teacher = require("../models/teacher");
