@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const passport = require("Passport");
+const passport = require("passport");
 const User = require("../models/user");
 const {isLoggedIn, isTeacherLoggedIn} = require("../middleware")
 const async = require("async"),
