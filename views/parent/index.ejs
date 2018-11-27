@@ -20,11 +20,17 @@
   <div class="container">
     <div class="row">
       <% if(parent.behavior === "good") { %>
-        <div class="col-12 bg-success" id="parentDisplayBehavior"></div>
-      <% } else if(parent.behavior === "naughty") {%>
-        <div class="col-12 bg-warning" id="parentDisplayBehavior"></div>
+        <div class="col-12 bg-success" id="parentDisplayBehavior">
+          <h1 class="text-center text-white">GOOD</h1>
+        </div>
+      <% } else if(parent.behavior === "naughty") { %>
+        <div class="col-12 bg-warning" id="parentDisplayBehavior">
+          <h1 class="text-center text-white">MEDIUM</h1>
+        </div>
       <% } else if(parent.behavior === "needToTalk") {%>
-        <div class="col-12 bg-danger" id="parentDisplayBehavior"></div>
+        <div class="col-12 bg-danger" id="parentDisplayBehavior">
+          <h1 class="text-center text-white">NEED TO TALK</h1>
+        </div>
       <% } %>
     </div>
   </div>
@@ -71,61 +77,26 @@
 
 
 
-  <hr>
-
-  <h1 class="text-center my-4">Messages</h1>
-  <div class="container">
-  <% if(parent.messages.length < 1) { %>
-      <h3 class="text-center m-2">No Messages to Display</h3>
-    <% } else { %>
-    <!-- display the messages -->
-    <!-- loop this div -->
-    <% parent.messages.forEach((message) => { %>
-        <div class="row">
-          <!-- meaning is the teacher -->
-          <% if(message.author === "parent") { %>
-            <!-- if the autor is parent put it here -->
-            <div class="col-md-7 bg-light rounded mb-2 mr-2">
-              <p> <%=message.message%> </p>
-            </div>
-            <!-- if the author is teacher, put it here -->
-            <div class="col-md-5">
-            </div>
-            <!-- meaning the author is the teacher -->
-          <% } else { %>
-            <!-- nlln -->
-            <!-- if the autor is teacher put it here -->
-            <div class="col-md-5">
-
-            </div>
-            <!-- if the author is teacher, put it here -->
-            <div class="col-md-7 bg-primary rounded mb-2 ">
-              <p class=""> <%=message.message%> </p>
-            </div>
-          <% }  %>
-        </div>
-    <% }) %>
+  <div class="container mt-5">
     <hr>
-    <botton class="mb-3 mx-auto btn btn-sm btn-outline-secondary">Show more</botton>
-
-  <% }  %>
-  <!-- loop this div -->
-
-</div>
+    <h3 class="lead text-center mb-2">End of Messages</h3>
+  </div>
 
 <!-- this should be sticky somewhere -->
 <!-- Send a message -->
-<div class="container  create-sticky-message">
-  <form class=" py-3" method="POST" action="/parent/<%=parent._id%>/message">
-    <div class="form-row">
-      <div class="col-md-10">
-        <textarea rows="1" name="message" class="form-control p-3" placeholder="Send a quick Message"></textarea>
+<div class="create-sticky-message mb-3">
+  <div class="container">
+    <form class=" py-3" method="POST" action="/parent/<%=parent._id%>/message">
+      <div class="form-row">
+        <div class="col-md-10">
+          <textarea rows="1" name="message" class="form-control p-3" placeholder="Send a quick Message"></textarea>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn h-100 btn-primary form-control" placeholder="State">SEND</button>
+        </div>
       </div>
-      <div class="col-md-2">
-        <button type="submit" class="btn h-100 btn-primary form-control" placeholder="State">SEND</button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
 
 

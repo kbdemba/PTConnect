@@ -1,14 +1,23 @@
 <% include ../partials/header %>
 <% include ../partials/nav %>
 <% include ../partials/flash %>
-  <section class="row justify-content-md-center">
-    <div class="col-md-4">
-      <form method="POST" action="/teacher/login" class="text-center border border-light p-5 pt-0" >
-        <p class="h4 mb-4">Sign in as Teacher</p>
+
+  <section style="min-height: 90vh;" class="mp-5 login-form bg-dark d-flex justify-content-center align-items-center">
+    <div class=" col-sm-9 col-md-5 col-lg-3 bg-dark ">
+      <form method="POST" action="/teacher/login" class="" >
+        <p class=" h5 mb-2 pt-5 text-center">Sign in as Teacher</p>
+
         <!-- Username -->
-        <input type="text" name="username" placeholder="Username" class="form-control mb-4">
+        <div class="form-group">
+          <label for="email" class="ml-2 lead">Email</label>
+          <input type="email" name="username" class="form-control mb-3 input-rounded" id="email" placeholder="name@example.com">
+        </div>
+
         <!-- Password -->
-        <input type="password"  class="form-control mb-4"  name="password" placeholder="Password">
+        <div class="form-group">
+          <label for="pword" class="ml-2 lead">Password</label>
+          <input type="password" name="password" class="form-control mb-4 input-rounded" id="pword" placeholder="Password">
+        </div>
         <div class="d-flex justify-content-around">
             <div>
                 <!-- Remember me -->
@@ -19,16 +28,15 @@
             </div>
             <div>
                 <!-- Forgot password -->
-                <a href="/forgot-password">Forgot password?</a>
+                <a class="" href="/forgot">Forgot password?</a>
             </div>
-        </div>
-        <!-- Sign in button -->
-        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+      </div>
+      <!-- Sign in button -->
+      <button class="btn btn-dark btn-block my-4" type="submit">Sign in</button>
   </form>
-
       <!-- Default form login -->
-
   </div>
 </section>
+
 
 <% include ../partials/footer %>

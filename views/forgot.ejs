@@ -1,6 +1,20 @@
-<% include ./partials/flash %>
-<h1>forget password</h1>
-<form action="/forgot" method="post">
-  <input type="email" name="email" placeholder="Email">
-  <button type="submit">submit</button>
-</form>
+<% include ./partials/header %>
+  <% include ./partials/nav %>
+  <!-- make sure the msg flash is visible because the nav bar will hide it -->
+  <% include ./partials/flash %>
+<div class="container mt-5" style="min-height:74vh">
+
+  <h3 class="text-center pt-2">Forgot Password</h3>
+  <form action="/forgot" method="post">
+    <div class="form-row">
+      <div class="col-md-7">
+        <div class="form-group">
+          <label for="email" class="ml-2 lead">Email:</label>
+          <input type="email" name="email" class="xxx form-control mb-4 input-rounded" id="email" placeholder="name@example.com">
+        </div>
+        <button type="submit" class="btn btn-dark form-control">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<% include ./partials/footer %>

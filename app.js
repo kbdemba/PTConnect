@@ -19,6 +19,8 @@ const createError = require('http-errors'),
       User = require("./models/user");
       //Camp = require("./models/camp"),
       //Comment = require("./models/comment");
+
+const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 //console.log(process.env.GMAILPW)
 
@@ -32,7 +34,10 @@ const parent = require("./routes/parent");
 // this is the new one to do
 //mongoose.connect('mongodb://localhost:27017/blackboard', { useNewUrlParser: true });
 const app = express();
-mongoose.connect('mongodb://localhost:27017/ptconnect', { useNewUrlParser: true });
+//connecting Locally
+//mongoose.connect('mongodb://localhost:27017/ptconnect', { useNewUrlParser: true });
+//connecting to MLab
+mongoose.connect(`mongodb://${process.env.DBNAME}:${process.env.DBPW}@ds149382.mlab.com:49382/ptconnnect`, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', ()=> {
@@ -111,7 +116,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("Server is running");
 });
 

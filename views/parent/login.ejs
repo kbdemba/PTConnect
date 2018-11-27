@@ -2,14 +2,22 @@
 <% include ../partials/nav %>
 <% include ../partials/flash %>
 
-  <section style="height: 70vh;" class="login-form d-flex justify-content-center align-items-center mt-5">
-    <div class="col-md-3 bg-dark border rounded">
+  <section style="min-height: 90vh;" class="pt-5 login-form bg-dark d-flex justify-content-center align-items-center">
+    <div class=" col-sm-9 col-md-5 col-lg-3 bg-dark ">
       <form method="POST" action="/parent/login" class="" >
-        <p class="h4 mb-4 pt-3 text-center">Sign in as Parent</p>
+        <p class=" h5 mb-2 pt-5 text-center">Sign in as Parent</p>
+
         <!-- Username -->
-        <input type="text" name="username" placeholder="Username" class="form-control mb-4">
+        <div class="form-group">
+          <label for="email" class="ml-2 lead">Email</label>
+          <input type="email" name="username" class="form-control mb-3 input-rounded" id="email" placeholder="name@example.com">
+        </div>
+
         <!-- Password -->
-        <input type="password"  class="form-control mb-4"  name="password" placeholder="Password">
+        <div class="form-group">
+          <label for="pword" class="ml-2 lead">Password</label>
+          <input type="password" name="password" class="form-control mb-4 input-rounded" id="pword" placeholder="Password">
+        </div>
         <div class="d-flex justify-content-around">
             <div>
                 <!-- Remember me -->
@@ -20,11 +28,11 @@
             </div>
             <div>
                 <!-- Forgot password -->
-                <a href="">Forgot password?</a>
+                <a class="" href="/forgot">Forgot password?</a>
             </div>
-        </div>
-        <!-- Sign in button -->
-        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+      </div>
+      <!-- Sign in button -->
+      <button class="btn btn-dark btn-block my-4" type="submit">Sign in</button>
   </form>
       <!-- Default form login -->
   </div>

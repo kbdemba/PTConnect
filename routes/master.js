@@ -34,7 +34,7 @@ router.get('/all-parents', (req, res, next)=> {
 });
 
 //get all teachers
-router.get('/all-teacher', (req, res, next)=> {
+router.get('/all-teachers', (req, res, next)=> {
   //maybe do a pagination in it
   Teacher.find({}, (err, found_teachers)=>{
     if(err){
