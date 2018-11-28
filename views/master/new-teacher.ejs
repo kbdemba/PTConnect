@@ -10,9 +10,25 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="flash-notification" class="">
+    <div class="container">
+        <% if(success && success.length > 0){ %>
+          <div class="alert alert-success" role="alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%=success%>
+          </div>
+        <% } %>
+        <% if(error && error.length > 0){ %>
+          <div class="alert alert-danger" role="alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%=error%>
+          </div>
+        <% } %>
+        </div>
+  </div>
 <div class="container">
     <div class="">
-        <h1 class="text-center">Create a new Teacher</h1>
+        <h1 class="text-center">nCreate a new Teacher</h1>
         <div style="width: 30%; margin: 25px auto;">
           <form method="POST" action="/master/new-teacher">
               <input required class="form-control mb-3" type="text" name="name_first_name" placeholder=" First Name">

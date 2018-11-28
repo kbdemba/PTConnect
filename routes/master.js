@@ -197,7 +197,7 @@ router.post('/new-teacher', (req, res, next)=> {
       if(err){
           console.log('error while user register!', err);
           req.flash("error", err.message);
-          return res.redirect("/register");
+          return res.redirect("/master/new-teacher");
           //return next(err);
       }
       console.log('user registered!');
