@@ -5,13 +5,39 @@
   <div class="container" style="min-height:80vh;padding-top:55px;">
     <div class="">
       <h1>Show Classroom</h1>
+      <h2>Teacher Name: <%=classroom.teacher.name.first_name%></h2> it worked
       <h2><%=classroom%></h2>
       <p>I will be able to see all the students in this classroom <br>
       but i will not be able to delete them or edit them. <br>
       if i want to delete them, i will go to their individual show page and delete them
       from there. <br>
       this feature is just for now
+      <h2><%=students[0].parent_name%></h2>
     </p>
+    <h1 class="text-center">Students in <%=classroom.class_name%></h1>
+    <h2 class="text-center">You can only view (Read Only)</h2>
     </div>
+    <table class="table bg-dark table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Parent Name</th>
+            <th scope="col">Parent Email or ??</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% students.forEach((student,index) => { %>
+            <tr>
+                <th scope="row"><%= index + 1%></th>
+                <td><%=student.student_name.last_name %></td>
+                <td><%=student.student_name.first_name %> </td>
+                <td><%=student.parent_name.first_name %> <%=student.parent_name.last_name %></td>
+                <td><%=student.behavior %> </td>
+            </tr>
+          <% }) %>
+        </tbody>
+    </table>
   </div>
 <% include ../partials/footer %>

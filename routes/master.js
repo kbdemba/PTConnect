@@ -99,20 +99,41 @@ router.get('/:id/show-teacher', (req, res, next)=> {
 // show an individual classroom
 router.get('/:id/show-classroom', (req, res, next)=> {
   const id = req.params.id
-  Classroom.findById(id, (err, classroom)=>{ // populate them by their last name
-    //handle the error
-    //if the found classroom is null, dont allow it to get to the edit page V2
-    if(err || classroom.length < 1){
-      console.log(err)
-      req.flash("error", "cannot find classroom");// i doubt this will ever happen unless u intentionally do it
-      return res.redirect("/..")
-    }else{
-        console.log(classroom)
-        //render the show page with the found classroom
-        res.render("master/show-classroom", {classroom})
+
+  //you can also find them by their class name
+  //and try to populate just the first and last name of the students and the teacher name
+  //this is a very long query and sort is case sensitive, Uppercases come first
+  Classroom.findById(id, "teacher class_name -_id")
+  .populate({ path: 'students', select: 'parent_name student_name -_id', options: {sort:{"student_name.last_name": 1} }   })
+    .exec((err,classroom)=>{
+      if(err || classroom.length < 1){
+        console.log(err)
+        req.flash("Ooopss!!!", "cannot find the classroom");// i doubt this will ever happen unless u intentionally do it
+        return res.redirect("/..")
+      }else{
+         const students = classroom.students
+         console.log("students coming")
+         console.log(students)
+         //render the show page with the found classroom
+         res.render("master/show-classroom", {classroom,students})
       }
-    })//end of the first find
+    })
 });
+
+// //you can also find them by their class name
+// //and try to populate just the first and last name of the students and the teacher name
+// Classroom.findById(id).populate("students").exec((err,classroom)=>{
+//   if(err || classroom.length < 1){
+//     console.log(err)
+//     req.flash("Ooopss!!!", "cannot find the classroom");// i doubt this will ever happen unless u intentionally do it
+//     return res.redirect("/..")
+//   }else{
+//      const students = classroom.students
+//      //render the show page with the found classroom
+//      res.render("master/show-classroom", {classroom,students})
+//   }
+// })
+// });
 
 
 //get the form to create a new teacher
@@ -345,7 +366,7 @@ router.delete("/:id/teacher/delete", function(req,res){
             req.flash("error", err.message);
         }else{
             req.flash("success", "successfully deleted the teacher");
-            res.redirect("/master");
+            res.redirect("/master/all-teachers");
         }
     });
 });

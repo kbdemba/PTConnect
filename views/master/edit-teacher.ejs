@@ -10,15 +10,15 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Edit Teacher</h1>
 <div class="container">
-    <div class="row">
-        <h1 style="text-align: center">Edit Teacher</h1>
+  <small>I will work on the navs</small>
+    <div class="">
+        <h1 class="text-center">Edit Teacher</h1>
         <div style="width: 30%; margin: 25px auto;">
           <form method="POST" action="/master/<%=teacher._id%>/teacher?_method=PUT">
 
-              <input required value="<%=teacher.name_first_name %>" class="form-control mb-3" type="text" name="name_first_name" placeholder=" First Name">
-              <input required value="<%=teacher.name_last_name %>" class="form-control mb-3" type="text" name="name_last_name" placeholder=" Last Name">
+              <input required value="<%=teacher.name.first_name %>" class="form-control mb-3" type="text" name="name_first_name" placeholder=" First Name">
+              <input required value="<%=teacher.name.last_name %>" class="form-control mb-3" type="text" name="name_last_name" placeholder=" Last Name">
               <input required value="<%=teacher.email %>" class="form-control mb-3" type="email" name="email" placeholder="Email">
 
               <!-- <input value="<%=teacher.ssn %>" class="form-control" type="text" name="ssn" placeholder="last 4 digit of SS"> -->

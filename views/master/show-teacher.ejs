@@ -11,8 +11,8 @@
       </p>
     </div>
     <div class="">
-      <a href="" class="btn btn-warning mx-3">Edit Teacher</a>
-      <form class="d-inline" action="master/delete-teacher" method="post">
+      <a href="/master/<%=teacher._id%>/edit-teacher" class="btn btn-warning mx-3">Edit Teacher</a>
+      <form class="d-inline" action="master/<%=teacher._id%/teacher/delete?_method=DELETE" method="post">
         <button class="btn btn-danger">Delete</button>
       </form>
     </div>

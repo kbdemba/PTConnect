@@ -1,18 +1,5 @@
 
                         /* body */
-/* for ths scrollspy */
-body {
-  position: relative;
-
-}
-/* #home{
-  position:relative;
-}
-.carousel-overlay{
-  The points are: centered top, left bottom, right bottom
-  clip-path: polygon(100% 0, 0 100%, 100% 100%);
-} */
-/*  ----------------------------------------------------------------------------------------------*/
 
 .big-font{
   color: #a86cc6;
@@ -35,7 +22,7 @@ body {
 }
 .team-img{
   margin-top: -50px;
-  transition: all 1.5s;
+  transition: all .5s;
 }
 .team-img:hover{
   transform:scale(1.3);
