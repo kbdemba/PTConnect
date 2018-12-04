@@ -1,1 +1,20 @@
-<h1>Show Parent</h1>
+<% include ../partials/header %>
+<% include ../partials/nav %>
+<% include ../partials/flash %>
+
+  <div class="container" style="min-height:80vh;padding-top:55px;">
+    <div class="">
+      <h1>Show Parent</h1>
+      <h2><%=parent%></h2>
+      <p>I will be able to edit them <br>
+      and i will be able to delete them as well <br>
+    </p>
+    </div>
+    <div class="">
+      <a href="" class="btn btn-warning mx-3">Edit Teacher</a>
+      <form class="d-inline" action="master/delete-teacher" method="post">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  </div>
+<% include ../partials/footer %>

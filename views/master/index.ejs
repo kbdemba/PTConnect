@@ -1,32 +1,8 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+<% include ../partials/flash %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- bootstrap -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/main.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="container">
-    <div id="" class="">
-          <% if(success && success.length > 0){ %>
-            <div class="alert alert-success" role="alert">
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <%=success%>
-            </div>
-          <% } %>
-          <% if(error && error.length > 0){ %>
-            <div class="alert alert-danger" role="alert">
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <%=error%>
-            </div>
-          <% } %>
-
-        </div>
+  <div class="container" style="min-height:80vh;padding-top:55px;">
     <div class="">
         <h1 class="text-center mb-5">Admin</h1>
         <div><a class="my-4 btn btn-primary btn-lg btn-block" href="/master/new-teacher">Create a new Teacher</a></div>
@@ -34,8 +10,6 @@
         <div><a class="my-4 btn btn-primary btn-lg btn-block" href="/master/all-teachers">View All Teacher</a></div>
         <div><a class="mb-4 btn btn-secondary btn-lg btn-block" href="/master/all-parents">View All Parent</a></div>
         <div><a class="my-4 btn btn-primary btn-lg btn-block" href="/master/all-classrooms">View All Classrooms</a></div>
-
     </div>
   </div>
-</body>
-</html>
+<% include ../partials/footer %>

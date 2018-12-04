@@ -96,6 +96,24 @@ router.get('/:id/show-teacher', (req, res, next)=> {
     })
 });
 
+// show an individual classroom
+router.get('/:id/show-classroom', (req, res, next)=> {
+  const id = req.params.id
+  Classroom.findById(id, (err, classroom)=>{ // populate them by their last name
+    //handle the error
+    //if the found classroom is null, dont allow it to get to the edit page V2
+    if(err || classroom.length < 1){
+      console.log(err)
+      req.flash("error", "cannot find classroom");// i doubt this will ever happen unless u intentionally do it
+      return res.redirect("/..")
+    }else{
+        console.log(classroom)
+        //render the show page with the found classroom
+        res.render("master/show-classroom", {classroom})
+      }
+    })//end of the first find
+});
+
 
 //get the form to create a new teacher
 router.get('/new-teacher', (req, res, next)=> {
