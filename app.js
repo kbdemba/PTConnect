@@ -35,9 +35,9 @@ const parent = require("./routes/parent");
 //mongoose.connect('mongodb://localhost:27017/blackboard', { useNewUrlParser: true });
 const app = express();
 //connecting Locally
-mongoose.connect('mongodb://localhost:27017/ptconnect', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost:27017/ptconnect', { useNewUrlParser: true });
 //connecting to MLab
-//mongoose.connect(`mongodb://${process.env.DBNAME}:${process.env.DBPW}@ds149382.mlab.com:49382/ptconnnect`, { useNewUrlParser: true });
+mongoose.connect(`mongodb://${process.env.DBNAME}:${process.env.DBPW}@ds149382.mlab.com:49382/ptconnnect`, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', ()=> {
@@ -88,17 +88,6 @@ app.use('/master', masterRouter);
 app.use("/teacher", teacher);
 app.use("/parent", parent);
 
-
-// app.use('/post', postRouter);
-// app.use('/review', reviewRouter);
-// app.use('/users', usersRouter);
-//
-//
-// app.use(indexRoutes);
-// app.use(campgroundRoutes);
-// app.use(commentRoutes);
-// app.use(userRoutes)
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -119,87 +108,3 @@ app.use(function(err, req, res, next) {
 app.listen(PORT, function(){
     console.log("Server is running");
 });
-
-////////////////////////////////////NEW NEW NEW ///////////////////
-// const createError = require('http-errors');
-// const express = require('express');
-// const path = require('path');
-// const cookieParser = require('cookie-parser');
-// const logger = require('morgan');
-// const bodyParser = require('body-parser');
-// const session = require('express-session');
-// const passport = require('passport');
-// //const LocalStrategy = require('passport-local').Strategy;
-// const mongoose = require('mongoose')
-// const User = require("./models/user")
-//
-// const indexRouter = require('./routes/index');
-// const postRouter = require('./routes/post');
-// const reviewRouter = require('./routes/review');
-// const usersRouter = require('./routes/users'); // this is not important
-//
-// const app = express();
-// // connect to the database
-// mongoose.connect('mongodb://localhost:27017/bitiko', { useNewUrlParser: true });
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', ()=> {
-//   console.log("we're connected!")
-// });
-//
-// // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
-//
-// app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
-//
-// //session configure
-// app.use(session({
-//   secret: 'anything ah anything',
-//   resave: false,
-//   saveUninitialized: true
-// }))
-//
-// // configure Passport"
-// passport.use(User.createStrategy());
-// app.use(passport.initialize());
-// app.use(passport.session());
-//
-// //passport.use(new LocalStrategy(User.authenticate()));
-//
-//
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
-//
-// //mount routes
-// app.use('/', indexRouter);
-// app.use('/post', postRouter);
-// app.use('/review', reviewRouter);
-// app.use('/users', usersRouter);
-//
-// // app.post('/login',
-// //   passport.authenticate('local', {
-// //     successRedirect: '/',
-// //     failureRedirect: '/login' }
-// //   ));
-// // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
-//
-// // error handler
-// app.use(function(err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get('env') === 'development' ? err : {};
-//
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
-//
-// module.exports = app;
