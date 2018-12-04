@@ -23,6 +23,7 @@ router.get('/', (req, res, next)=> {
 //get all parents, here you can view either parents or students
 router.get('/all-parents', (req, res, next)=> {
   //maybe do a pagination in it
+  console.log("all parent")
   Parent.find({}, (err, found_parents)=>{
     if(err){
       console.log(err)
