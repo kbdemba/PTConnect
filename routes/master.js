@@ -5,7 +5,7 @@ const User = require("../models/user");
 const Parent = require("../models/parent");
 const Teacher = require("../models/teacher");
 const Classroom = require("../models/classroom");
-const ContactForm = require("../models/ContactForm");
+const ContactForm = require("../models/contactForm");
 const {isLoggedIn, isTeacherLoggedIn, isMasterLoggedIn} = require("../middleware")
 
 //this has to be included or there will be no strategy
