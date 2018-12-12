@@ -35,9 +35,9 @@ const parent = require("./routes/parent");
 //mongoose.connect('mongodb://localhost:27017/blackboard', { useNewUrlParser: true });
 const app = express();
 //connecting Locally
-mongoose.connect('mongodb://localhost:27017/ptconnect', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost:27017/ptconnect', { useNewUrlParser: true });
 //connecting to MLab
-//mongoose.connect(`mongodb://${process.env.DBNAME}:${process.env.DBPW}@ds149382.mlab.com:49382/ptconnnect`, { useNewUrlParser: true });
+mongoose.connect(`mongodb://${process.env.DBNAME}:${process.env.DBPW}@ds149382.mlab.com:49382/ptconnnect`, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', ()=> {

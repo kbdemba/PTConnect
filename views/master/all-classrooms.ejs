@@ -2,12 +2,13 @@
 <% include ../partials/nav %>
 <% include ../partials/flash %>
 
-  <div class="container mt-5"></div>
-  <h1>All the Classroms are in here</h1>
-  <%=classrooms.length%>
+
+
   <!-- table for all classrooms for master -->
   <section id="all-parents-table" class="">
-    <div class="container">
+    <div class="container" style="min-height:80vh;padding-top:55px;">
+      <h1>All the Classroms are in here</h1>
+      <%=classrooms.length%>
       <h3>Number of classrooms: <%=classrooms.length %></h3>
       <h3 class="text-center mt-4 mb-1">All Teachers</h3>
       <div class=" bg-dark mx-auto w-50 mt-0 mb-4">

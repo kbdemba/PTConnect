@@ -21,7 +21,7 @@ const middlewares = {
         res.redirect(`/${req.user.role}`)
       }
     }else{
-      res.send("Needs to be logged in")
+      req.flash("error", "Needs to be logged in: for demo purposes, use - username :k@k.com, pw: kk ")
       res.redirect("/master/login")
     }
   },

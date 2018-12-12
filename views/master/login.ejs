@@ -1,1 +1,42 @@
-<h2>this is where the principal is going to log in</h2>
+<% include ../partials/header %>
+<% include ../partials/nav %>
+<% include ../partials/flash %>
+
+  <section style="min-height: 90vh;" class="pt-5 login-form bg-dark d-flex justify-content-center align-items-center">
+    <div class=" col-sm-9 col-md-5 col-lg-3 bg-dark ">
+      <form method="POST" action="/parent/login" class="" >
+        <p class=" h5 mb-2 pt-5 text-center">Master Sign in</p>
+
+        <!-- Username -->
+        <div class="form-group">
+          <label for="email" class="ml-2 lead">Email</label>
+          <input type="email" name="username" class="form-control mb-3 input-rounded" id="email" placeholder="name@example.com">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="pword" class="ml-2 lead">Password</label>
+          <input type="password" name="password" class="form-control mb-4 input-rounded" id="pword" placeholder="Password">
+        </div>
+        <div class="d-flex justify-content-around">
+            <div>
+                <!-- Remember me -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                </div>
+            </div>
+            <div>
+                <!-- Forgot password -->
+                <a class="" href="/forgot">Forgot password?</a>
+            </div>
+      </div>
+      <!-- Sign in button -->
+      <button class="btn btn-dark btn-block my-4" type="submit">Sign in</button>
+  </form>
+      <!-- Default form login -->
+  </div>
+</section>
+
+
+<% include ../partials/footer %>

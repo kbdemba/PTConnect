@@ -5,6 +5,7 @@ const User = require("../models/user");
 const Parent = require("../models/parent");
 const Teacher = require("../models/teacher");
 const Classroom = require("../models/classroom");
+const ContactForm = require("../models/ContactForm");
 const {isLoggedIn, isTeacherLoggedIn, isMasterLoggedIn} = require("../middleware")
 
 //this has to be included or there will be no strategy
@@ -16,8 +17,23 @@ passport.use(User.createStrategy());
 
 // GET home-page/index for master/Principal have a link to show all the Parents, students, and classes
 // You can only see them but not communicate with them
-router.get('/', (req, res, next)=> {
+router.get('/', isMasterLoggedIn, (req, res, next)=> {
   res.render('master/index');
+});
+
+router.post('/contact-form-on-index', (req, res, next)=> {
+  ContactForm.create(req.body, function(err, contact){
+    if(err){
+      console.log(err)
+    }else{
+      req.flash("success", "Thanks for contacting us, we will get back to you within 24hrs")
+      res.redirect('/');
+    }
+  })
+});
+
+router.get('/login', (req, res, next)=> {
+  res.render('master/login');
 });
 
 //get all parents, here you can view either parents or students
